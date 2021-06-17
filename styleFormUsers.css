@@ -1,0 +1,47 @@
+body {
+	text-align: center;
+}
+
+form {
+	background-color: #d5e3d9;
+	padding: 13px;
+	width: 310px;
+	margin: auto;
+	margin-top: 50px;
+	border: 1px solid #1f1400;
+}
+
+form div {
+	margin-top: 25px;
+}
+
+form label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+label[for=admin] {
+	display: inline-block;
+	margin-bottom: 0px;
+}
+
+a {
+	display: block;
+	padding: 10px;
+	background-color: #d5e3d9;
+	border: 1px solid #1f1400;
+	text-decoration: none;
+	text-align: center;
+	width: 250px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+a:hover {
+	font-weight: bold;
+	border: 3px solid #1f1400;
+}
+
+button {
+	cursor: pointer;
+}

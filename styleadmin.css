@@ -1,0 +1,191 @@
+/*AJOUT sous-menu : tous les catégories*/
+
+/*ajout vincent style table*/
+table{
+  width: 100%;
+}
+tr:nth-child(1){
+ height: 40px;
+}
+td{
+  width: 200px;
+text-align: center;
+}
+td:nth-child(4){
+  width: 400px;
+}
+td:nth-child(even){
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.table_column{
+  font-weight: bolder;
+  text-decoration: underline;
+}
+table input{
+  margin: auto;
+  margin-top: 0.5em;
+}
+.button_input{
+  background-color: #d5e3d9;
+  border:1px solid black;
+  padding: 0.5em;
+}
+table textarea{
+  min-width: 400px;
+  min-height: 50px;
+}
+table textarea:focus{
+  height: 180px;
+  transition: 0.5s;
+}
+.delete{
+  display: flex;
+  align-content: center;
+}
+.delete input{
+  margin: auto;
+  margin-top: 2em;
+  width: 200px;
+  border: none;
+  background-color: #b40006 ;
+  color:white;
+  font-weight: bolder;
+  border-radius: 10px;
+  padding : 0.5em;
+  font-size: 1.2em;
+}
+.titre_admin{
+      text-align: center;
+      margin-top: 1em;
+  }
+/*fin ajout vincent*/
+header p {
+  margin: 0;
+}
+
+.menu-item .sous-menus {
+  z-index: 150;
+}
+
+#tableau_produits {
+  width: 95vw;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#ajout_produit {
+  display: block;
+  border: 1px solid #1f1400;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.3em;
+  margin: auto;
+  margin-top: 50px;
+  height: 75px;
+  background-color: #d5e3d9;
+}
+
+#ajout_produit span {
+  font-size: 3em;
+}
+
+
+#tableau_produits article {
+  border-bottom: 1.5px solid #1f1400;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.form_produit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form_produit > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produit_photo {
+  height: 100px;
+  width: auto;
+}
+
+.modifier_photo {
+  height: 20px;
+  width: auto;
+  border: 0.5px solid #1f1400;
+  padding: 3px;
+  background-color: #d5e3d9;
+}
+
+.modifier_photo:hover {
+  border: 1px solid #1f1400;
+  cursor: pointer;
+}
+
+.form_produit label {
+  margin-left: 30px;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+input[name=produitPrix] {
+  width: 3em;
+}
+
+input[name=produitNom] {
+  width: 10em;
+}
+
+input[type=image] {
+  margin-left: 30px;
+  background-color: #d5e3d9;
+  border: 0.5px solid #1f1400;
+  width: 38px;
+  height: auto;
+  padding: 5px;
+}
+
+input[type=image]:hover {
+  border: 1.8px solid #1f1400;
+}
+.add_user{
+  margin-bottom: 1em;
+}
+
+.ligne .row3{
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+
+.form_produit {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.form_produit > div {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: flex-start;
+}
+
+header p {
+  font-size: 0.8em;
+}
+
+
+thead, tr, th{
+  margin-top: 20px;
+}
+
+
+}

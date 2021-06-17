@@ -1,0 +1,481 @@
+/*body{
+  background-image: url(bg.jpg);
+}*/
+mysqldump --user='vincent' --password='root' --databases my_shop > my_shop.sql
+/*
+AJOUT DE la classe img_produit dans le HTML et dans le css =>page accueil
+AJOUT DE la classe img_produit_unique dans le HTML et dans le css=> page read_product_id
+ajout margin auto à la classe produit.
+ajout du hover sur les articles.
+limitation des aarticles affiché sur la page d'acceuil à 4 articles.
+modification del margin-top et bottom:1em=> titre_section
+page renommée en index.php pour que php fonctionne
+produit achat a et achat a:hover modifiés.
+description_hidden ajouté au html et aux css pour la page index.php, la description se montre quand on passe la souris sur le produit.
+ajout d'une div intermédiaire pour faire un test avec la descriptionqui apparit en dehors du cadre vert quand on passe la souris.
+*/
+
+/*AJOUT L50 à 62 sous-menus (ajout des sous-menus dans HTML)
+L87 form #search_img : positionner l'image de la search bar
+L93 header #compte : centrer header
+L226 : remis produit_div à 320px
+L268 à 281 : style tables dans la page users (celle qui s'affiche quand on clique sur "tous les utilisateurs")
+*/
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Style header */
+
+a {
+  color: #1f1400;
+}
+.intermediaire_div{
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+.intermediaire_div:hover{
+  transform: scale(1.1);
+  transition: 0.2s;
+  box-shadow: 1px 1px 15px #d5e3d9;
+}
+
+a:hover {
+  color: #1f1400;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width:75vw;
+  margin: 5vh auto 3vh auto;
+  font-size: 1.2em;
+}
+
+.sous-menus {
+  position: absolute;
+  background-color: #d5e3d9;
+  width: 150px;
+  display: none;
+  padding-left: 5px;
+  z-index: 150;
+}
+
+.menu-item:hover .sous-menus {
+  display: block;
+}
+
+.sous-menus a{
+  display: block;
+}
+
+header,footer {
+  background-color: #d5e3d9;
+  color: #1f1400;
+  z-index: 150;
+}
+
+header #logo {
+  width: 20vw;
+}
+
+#ligne_haut > div {
+  width: 25vw;
+}
+
+header #ligne_haut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 4vw 2vw 40vw;
+}
+
+form #search_img {
+  width: auto;
+  height: 2.5em;
+  margin-left: 15px;
+}
+
+header #compte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #cart {
+  display: flex;
+  align-items: center;
+}
+
+header #cart img {
+  margin-right: 15px;
+}
+
+header form {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  justify-content: flex-end;
+}
+
+form #search_bar,#search_bar_mobile {
+  height: 2.3em;
+  width: 20em;
+  background-color: rgba(201, 76, 76, 0);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.7;
+  color: #3f2a2e;
+  text-transform: uppercase;
+  border: 0;
+  border-bottom: 1px solid #3f2a2e;
+  padding: 0 7px;
+}
+
+#search_bar:focus {
+        outline: none;
+      }
+
+/* Fin style header */
+
+/* Style Best Seller */
+
+.titre_section {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#best_seller {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin:auto;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  height: 600px;
+}
+
+#produit_id{
+  width: 70%;
+  max-width: 800px;
+  margin:auto;
+  padding:1.5em;
+  display: flex;
+}
+/*ajout de la classe img_produit aux images produit pour un meilleur ciblage et pouvoir mettre le reste dans une div*/
+
+.img_produit_unique{
+  width: 50%;
+  height: auto;
+  margin:auto;
+}
+.achat_unique{
+padding: 0.2em;
+width: 50%;
+}
+.achat_unique p, .achat_unique a, .achat_unique h3, .achat_unique h5{
+  text-align: center;
+  }
+.achat_unique a{
+    width: 60px;
+    display: block;
+    margin:auto;
+}
+.achat_unique img{
+  margin:auto;
+}
+
+.img_produit  {
+  width: 230px;
+}
+.produits {
+  width: 250px;
+  max-height: 90%;
+  text-align: center;
+  /*border-left: 1.5px solid black;*/
+}
+.intermediaire_div:hover{
+  transform: scale(1.1);
+  transition: 0.2s;
+  box-shadow: 1px 1px 15px #d5e3d9;
+}
+.produits:hover .description_hidden{
+  height: auto;
+  color:black;
+  max-height: 280px;
+  font-size: 0.9em;
+  transition: 0.5s;
+  margin-bottom: 2.5em;
+}
+.description_hidden{
+  margin:auto;
+  margin-top: 2.5em;
+overflow:hidden;
+color:white;
+height: 0;
+max-width: 240px;
+
+}
+
+.produits h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.produits h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.produit_div{
+  height:320px;
+}
+.produits .achat {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2em;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 0.4em;
+}
+
+.produits .prix {
+  font-size: 1.1em;
+}
+
+.produits .achat a , .achat_unique a{
+  padding:0.7em;
+}
+.achat a:hover, .achat_unique a:hover{
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px green;
+}
+
+/* Fin style Best Seller */
+
+/*engagee*/
+.engagee{
+  float: left;
+}
+
+
+/*Style users tableau*/
+
+#table-users {
+  width: 80vw;
+  margin: auto;
+}
+.produit_id{
+  width: 70%;
+  max-width: 800px;
+  margin:auto;
+  padding:1.5em;
+  display: flex;
+}
+
+
+@media only screen and (max-width: 992px) {
+
+  .table thead {
+    display: none;
+  }
+  .produit_id{
+    flex-direction: column;
+  }
+
+  .table tr{
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .table td {
+    display: block;
+    text-align: right;
+  }
+  .table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x:hidden; 
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+  }
+
+  header #logo_mobile {
+    width: 40vw;
+  }
+
+  header #ligne_haut_mobile {
+    text-align: center;
+    padding-bottom: 3vh;
+  }
+
+  header #ligne_haut_mobile div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3vh;
+  }
+
+  #ligne_haut_mobile form {
+    margin-top: 0;
+  }
+
+  #search_img_mobile {
+    width: 30px;
+  }
+
+  #search_bar_mobile {
+    width: 13em;
+  }
+
+  main {
+    margin-top: 35vh;
+  }
+
+  #menu_mobile {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+  }
+
+  .dropleft .dropdown-toggle::before {
+    font-size: 0;
+  }
+
+  header .btn {
+    padding: 0;
+    font-size: 2.3em;
+    background-color: rgba(0,0,0,0);
+    border:0;
+    color: #1f1400;
+  }
+
+  .btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+    box-shadow: none;
+  }
+
+  .btn-secondary:focus {
+    box-shadow: none;
+  }
+
+  .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    background-color: rgba(0,0,0,0);
+    border:0;
+    color: #1f1400;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(0,0,0,0);
+    border:0;
+    color: #1f1400;
+  }
+
+  .dropdown-menu {
+    top: 75px!important;
+    right: -35px!important;
+    width: 103vw;
+    left: auto!important;
+    transform: translate3d(0px, 0px, 0px)!important;
+    z-index: 10;
+  }
+
+  .sous {
+    padding-left: 15px;
+  }
+
+  #best_seller {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
+  .produits {
+    border-bottom: 1px solid #1f1400;
+    border-top: 1px solid #1f1400;
+  }
+  #produit_id{
+    flex-direction: column;
+  }
+  .achat_unique{
+    width: 100%;
+  }
+
+  .titre_section {
+    font-size: 1.3em;
+  }
+  .row3, .row4{
+    display: none;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ligne {
+    display: none!important;
+  }
+
+  .signup-form {
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1300px){
+  header #compte a{
+    MARGIN: 2px;
+    PADDING: 5px;
+
+  }
+}
+/*Coeur de la page et Footer*/
+
+.ligne {
+  background-color:white;
+  margin-left: 10%;
+  margin-right: 7%;
+  opacity:0.8;
+}
+.ligne{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+.row1 {
+  display: flex;
+}
+.row2{
+  padding: 5px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15vh;
+  width: 100%;
+  padding-top: 5vh;
+}
+
+.logo{
+  padding : 5px;
+
+}
+/*Fin Coeur de la page et Footer*/
